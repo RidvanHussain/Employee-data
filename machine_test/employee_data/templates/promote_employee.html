@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Promote Employee</title>
+</head>
+<body>
+    <h1>Promote Employee #{{ id }}</h1>
+    <form method="POST">
+        {% csrf_token %}
+        <label for="increment">Salary Increment:</label>
+        <input type="number" name="increment" required>
+        <button type="submit">Promote</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>display</title>
+</head>
+<body>
+<h2>All Employees</h2>
+<table border="1">
+  <tr>
+    <th>ID</th><th>Name</th><th>Position</th><th>Salary</th><th>Actions</th>
+  </tr>
+  {% for emp in employees %}
+  <tr>
+    <td>{{ emp.id }}</td>
+    <td>{{ emp.name }}</td>
+    <td>{{ emp.position }}</td>
+    <td>{{ emp.salary }}</td>
+    <td>
+      <a href="{% url 'remove' emp.id %}">Remove</a> |
+      <a href="{% url 'promote' emp.id %}">Promote</a>
+    </td>
+  </tr>
+  {% endfor %}
+</table>
+
+<a href="{% url 'add' %}">Add New Employee</a>
+
+</body>
+</html>
